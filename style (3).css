@@ -1,0 +1,55 @@
+h1{
+    text-align: center;
+    color: blue;
+    font-size: 40px;
+}
+.odd {
+    color:blue;
+    background-color: brown;
+}
+.even 
+{
+    color:white;
+    background-color: blue;
+}
+#sample
+{
+    background-color: blue;
+}
+
+/* This is for table */
+table 
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td, th
+{
+    border:1px solid black;
+    padding: 2px;
+}
+/*th {
+    border: 1px solid black;
+    padding:2px;
+}*/
+
+ul li 
+{
+    color:blue;
+}
+a[href="https://www.havard.edu"]{
+    color:red;
+    text-decoration: none;
+}
+
+button 
+{
+    background-color: red;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+}
+button:hover{
+    background-color: green;
+}
