@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <html>
+<head>
+    <title>Link Table Generator</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        
+        table, th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+    <h1>Link Generator</h1>
+</head>
+<body>
+    <form id="linkForm">
+        <label for="startRange">Start Range:</label>
+        <input type="text" id="startRange" value="1">
+        <label for="endRange">End Range:</label>
+        <input type="text" id="endRange" value="1">
+        <button type="button" onclick="displayTable()">Display Table</button>
+    </form>
+    <table id="linkTable"></table>
+ 
+    <script>
+        let data = ["syllabus.html", "p1.html", "p2.html", "style.html", "email.html", "system.html", "process.html"];
+ 
+        function displayTable() {
+            let startRange = parseInt(document.getElementById("startRange").value);
+            let endRange = parseInt(document.getElementById("endRange").value);
+            let linkTable = document.getElementById("linkTable");
+ 
+            if (isNaN(startRange) || isNaN(endRange) || startRange < 1 || endRange > data.length || startRange > endRange) {
+                linkTable.innerHTML = "Invalid range, valid range: 1-" + data.length;
+                return;
+            }
+ 
+            let tableHTML = "";
+            for (let i = startRange - 1; i < endRange; i++) {
+                tableHTML += "<tr><td><a href='" + data[i] + "'>" + data[i] + "</a></td></tr>";
+            }
+            linkTable.innerHTML = tableHTML;
+        }
+ 
+        window.onload = function() {
+            let endRange = data.length;
+            document.getElementById("endRange").value = endRange;
+            let rangeMessage = "Valid Range: 1-" + endRange;
+            document.getElementById("linkTable").innerHTML = rangeMessage;
+        };
+    </script>
+</body>
+
+    
+</body>
+</html>
